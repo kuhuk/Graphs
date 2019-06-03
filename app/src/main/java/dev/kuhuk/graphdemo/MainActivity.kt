@@ -108,7 +108,7 @@ class MainActivity : DemoBase() {
     }
 
     private inner class ChartDataAdapter internal constructor(context: Context, objects: List<ChartItem>) :
-            ArrayAdapter<ChartItem>(context, 0, objects) {
+        ArrayAdapter<ChartItem>(context, 0, objects) {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View? {
             return getItem(position).getView(position, convertView, context)
@@ -123,6 +123,8 @@ class MainActivity : DemoBase() {
             return 3 // Because we have 3 different item-types
         }
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.only_github, menu)

@@ -7,6 +7,7 @@ import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis.XAxisPosition
 import com.github.mikephil.charting.data.ChartData
 import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import dev.kuhuk.graphdemo.R
 
 class LineChartItem(cd: ChartData<*>, c: Context) : ChartItem(cd) {
@@ -32,6 +33,16 @@ class LineChartItem(cd: ChartData<*>, c: Context) : ChartItem(cd) {
 
         val xAxis = holder.chart!!.xAxis
         xAxis.position = XAxisPosition.BOTTOM
+
+        val strings = arrayOf("A", "B", "C", "D")
+
+//        chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxis));
+//        chart.setData(new LineData( lines));
+
+        holder.chart!!.xAxis.valueFormatter = IndexAxisValueFormatter(strings)
+        holder.chart!!.data = mChartData as LineData
+
+
 //        xAxis.typeface = mTf
         xAxis.setDrawGridLines(false)
         xAxis.setDrawAxisLine(true)
@@ -48,7 +59,7 @@ class LineChartItem(cd: ChartData<*>, c: Context) : ChartItem(cd) {
         rightAxis.axisMinimum = 0f // this replaces setStartAtZero(true)
 
         // set data
-        holder.chart!!.data = mChartData as LineData
+//        holder.chart!!.data = mChartData as LineData
 
         // do not forget to refresh the chart
         // holder.chart.invalidate();
