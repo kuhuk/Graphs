@@ -24,10 +24,15 @@ class MainActivity : DemoBase() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Full screen
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+        // Layout
         setContentView(R.layout.activity_main)
 
+        // ActionBar title
         title = "MultipleCharts"
 
         val lv : ListView = findViewById(R.id.listView1)
