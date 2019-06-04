@@ -1,4 +1,4 @@
-package dev.kuhuk.graphdemo.listviewitems
+package dev.kuhuk.graphdemo
 
 import android.graphics.Color
 import android.os.Bundle
@@ -14,7 +14,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import com.github.mikephil.charting.utils.ColorTemplate
 import dev.kuhuk.graphdemo.R
 
-class LineChartItem : AppCompatActivity() {
+class LineChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
@@ -23,7 +23,6 @@ class LineChartItem : AppCompatActivity() {
         val chart = findViewById<LineChart>(R.id.chart)
 
         // apply styling
-        // holder.chart.setValueTypeface(mTf);
         chart.description.isEnabled = false
         chart.setDrawGridBackground(false)
 
@@ -32,32 +31,23 @@ class LineChartItem : AppCompatActivity() {
 
         val strings = arrayOf("A", "B", "C", "D")
 
-//        chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxis));
-//        chart.setData(new LineData( lines));
-
         chart.xAxis.valueFormatter = IndexAxisValueFormatter(strings)
         chart.data = generateDataLine(1)
 
-//        xAxis.typeface = mTf
         xAxis.setDrawGridLines(false)
         xAxis.setDrawAxisLine(true)
 
         val leftAxis = chart.axisLeft
-//        leftAxis.typeface = mTf
         leftAxis.setLabelCount(5, false)
         leftAxis.axisMinimum = 0f // this replaces setStartAtZero(true)
 
         val rightAxis = chart.axisRight
-//        rightAxis.typeface = mTf
         rightAxis.setLabelCount(5, false)
         rightAxis.setDrawGridLines(false)
         rightAxis.axisMinimum = 0f // this replaces setStartAtZero(true)
 
-        // set data
-//        holder.chart!!.data = mChartData as LineData
-
         // do not forget to refresh the chart
-        // holder.chart.invalidate();
+         chart.invalidate()
         chart.animateX(750)
     }
 

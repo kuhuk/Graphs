@@ -1,4 +1,4 @@
-package dev.kuhuk.graphdemo.listviewitems
+package dev.kuhuk.graphdemo
 
 import android.graphics.Color
 import android.os.Bundle
@@ -10,9 +10,8 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
-import dev.kuhuk.graphdemo.R
 
-class BarChartItem : AppCompatActivity() {
+class BarChartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
