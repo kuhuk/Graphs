@@ -18,7 +18,7 @@ class PieChartActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         setContentView(R.layout.activity_pie_chart)
-        PieChartItem(generatedDataPie(), this)
+//        PieChartItem(generatedDataPie(), this)
     }
 
     // For Pie Chart

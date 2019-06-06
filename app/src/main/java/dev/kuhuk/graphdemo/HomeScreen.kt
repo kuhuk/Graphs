@@ -8,6 +8,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Button
+import dev.kuhuk.graphdemo.listviewitems.BarChartItem
+import dev.kuhuk.graphdemo.listviewitems.LineChartItem
+import dev.kuhuk.graphdemo.listviewitems.PieChartItem
 
 class HomeScreen : DemoBase() {
     override fun saveToGallery() {
@@ -28,17 +31,17 @@ class HomeScreen : DemoBase() {
         val btnPieChart : Button? = findViewById(R.id.btnPieChart)
 
         btnLineChart!!.setOnClickListener {
-            val intent = Intent(this, LineChartActivity::class.java)
+            val intent = Intent(this, LineChartItem::class.java)
             startActivity(intent)
         }
 
         btnBarChart!!.setOnClickListener {
-            val intent = Intent(this, BarChartActivity::class.java)
+            val intent = Intent(this, BarChartItem::class.java)
             startActivity(intent)
         }
 
         btnPieChart!!.setOnClickListener {
-            val intent = Intent(this, PieChartActivity::class.java)
+            val intent = Intent(this, PieChartItem::class.java)
             startActivity(intent)
         }
     }

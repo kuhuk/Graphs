@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".listviewitems.BarChartItem"/>
         <activity android:name=".listviewitems.LineChartItem"/>
+        <activity android:name=".listviewitems.PieChartItem"/>
     </application>
 
 </manifest>
